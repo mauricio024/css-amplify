@@ -64,115 +64,81 @@
       color: var(--accent);
     }
     main {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 2rem auto;
       padding: 2rem;
       background: #fff;
       border-radius: 1rem;
       box-shadow: 0 4px 24px #0c2d4810;
     }
-    .section {
+    /* HERO/CASE OF USE */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 2.5rem;
+      text-align: center;
     }
-    h1, h2 {
-      color: var(--primary);
+    .hero h1 {
+      color: var(--ccs-purple);
+      font-size: 2.2rem;
       margin-bottom: 1rem;
+    }
+    .hero .use-case {
+      background: #eae6fb;
+      border-left: 6px solid var(--ccs-purple);
+      border-radius: 0.7rem;
+      padding: 1.3rem 2rem;
+      font-size: 1.14rem;
+      color: #222;
+      box-shadow: 0 1px 4px #4B28981a;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      max-width: 900px;
     }
     .grid {
       display: grid;
       gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
     .card {
       background: #f4faff;
-      padding: 1.5rem;
+      padding: 1.4rem;
       border-radius: 1rem;
       box-shadow: 0 2px 8px #0c2d4810;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
+      min-height: 230px;
+      position: relative;
     }
     .card .icon {
-      font-size: 2rem;
-    }
-    .actions {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .btn {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 1rem;
-      padding: 0.5rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background: var(--primary);
-    }
-    .status {
-      padding: 0.25rem 1rem;
-      border-radius: 0.7rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #fff;
-      background: var(--success);
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-    .status.danger {
-      background: var(--danger);
-    }
-    /* Dashboard styles */
-    .dashboard-cards {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .dashboard-card {
-      background: #eaf6fb;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px #0c2d4820;
-      min-width: 210px;
-      flex: 1 1 210px;
-      text-align: center;
-    }
-    .dashboard-card span {
-      font-size: 2rem;
-      color: var(--primary);
-      display: block;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    th, td {
-      border: 1px solid #e0e0e0;
-      padding: 0.75rem 1rem;
-      text-align: left;
-    }
-    th {
-      background: #eaf6fb;
       color: var(--primary);
     }
-    @media (max-width: 800px) {
+    .card strong {
+      font-size: 1.18rem;
+      color: var(--ccs-purple);
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
       main {
         padding: 1rem;
       }
-      .dashboard-cards {
-        flex-direction: column;
+      .hero .use-case {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.3rem;
       }
       nav {
-        gap: 0.8rem;
+        gap: 1rem;
+        font-size: 0.98rem;
       }
     }
   </style>
@@ -183,20 +149,88 @@
     <span class="logo">CCS Seguimiento Vehicular</span>
     <nav>
       <a href="#about">Acerca de</a>
-      <a href="#monitoring">Monitoreo</a>
-      <a href="#sales">Ventas</a>
-      <a href="#estadisticas">Estadísticas</a>
+      <a href="#monitoreo">Monitoreo</a>
+      <a href="#central">Central</a>
+      <a href="#ventas">Ventas</a>
       <a href="#plus">Servicio Plus</a>
-      <a href="#usuarios">Usuarios</a>
-      <a href="#finanzas">Finanzas</a>
-      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <main>
-    <!-- El resto del HTML permanece igual que la versión anterior -->
-    <!-- ... -->
-    <!-- Puedes copiar el contenido de secciones de la respuesta anterior aquí -->
+    <!-- Sección HERO con el caso de uso -->
+    <section class="hero" id="about">
+      <h1>¿Qué es CCS?</h1>
+      <div class="use-case">
+        CCS es la Compañía Colombiana de Seguimiento de Vehículos. CCS se encarga del monitoreo y seguimiento de vehículos de carga. CCS instala sensores en camiones de carga, de forma que es posible en todo momento conocer la localización, velocidad, dirección, estado de la carga, temperatura de la carga, detenciones planeadas y no planeadas, y accidentes que pueda tener cada camión.<br><br>
+        Igualmente, cada vehículo tiene una cámara interna que graba todo lo que ocurre al interior de la cabina, y una cámara que graba todo el recorrido del camión. Finalmente, cada camión cuenta con un botón de pánico en caso de que se presente una emergencia.<br><br>
+        CCS tiene una central en la que se consolidan todas las señales provenientes de los camiones. En esta central se analizan todos los estados recibidos y en caso de detectar una situación anómala o recibir una señal de emergencia, se informa tanto a las autoridades respectivas, como a organismos de socorro e interesados (propietario del camión).<br><br>
+        CCS actualmente tiene un proceso de ventas en el que requiere que un cliente vaya a una oficina, haga la solicitud para contratar la instalación de sensores para una serie de vehículos. En el proceso de venta se revisa la identidad del usuario y los ingresos de la persona o empresa que va a contratar los sensores para sus vehículos y de acuerdo con unas reglas de negocio establecidas en la empresa se da o no la autorización del contrato. Cuando el contrato contempla la autorización de más de 50 vehículos se requiere la firma del Manager.<br><br>
+        Por otro lado, los clientes están pidiendo un servicio que les permita visualizar las estadísticas de localización, distancia de los recorridos, tiempo de movimiento de cada camión diario, mensual y anual, esto debido a que actualmente el sistema solo es utilizado para enviar alertas en casos específicos. Por esta razón, el manager de la compañía le gustaría crear un servicio plus para los clientes con el que les pueda entregar las funcionalidades que están solicitando y que adicional contempla un módulo de administración en el que el cliente pueda modificar el tipo de alertas que le gustaría recibir, en qué correos o dispositivos le gustaría recibirlas, un módulo financiero en dónde pueda recibir todas las facturas y hacer los pagos mensuales y un módulo en el que pueda crear y modificar los usuarios que tendrán acceso al sistema con diferentes roles (Administración, Visualización, Compra y Aprobación de nuevos productos o planes).
+      </div>
+    </section>
+    
+    <!-- Tarjetas visuales con gráficos/resumen de necesidades y módulos -->
+    <section id="monitoreo" class="section">
+      <h2 style="color:#145da0;">¿Qué ofrece CCS?</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="icon">📡</span>
+          <strong>Monitoreo en tiempo real</strong>
+          <span style="color:#444;">Ubicación, velocidad y ruta de cada camión 24/7. Detección de desvíos o detenciones no planeadas.</span>
+        </div>
+        <div class="card">
+          <span class="icon">🌡️</span>
+          <strong>Sensores y Cámaras</strong>
+          <span style="color:#444;">Monitoreo de temperatura, estado de carga y video en cabina y recorrido completo.</span>
+        </div>
+        <div class="card">
+          <span class="icon">🚨</span>
+          <strong>Botón de Pánico</strong>
+          <span style="color:#444;">Alertas automáticas ante emergencias, informando a autoridades y propietarios.</span>
+        </div>
+        <div class="card">
+          <span class="icon">🖥️</span>
+          <strong>Central de datos CCS</strong>
+          <span style="color:#444;">Recepción, análisis y gestión de señales de todos los camiones, con respuesta rápida ante incidentes.</span>
+        </div>
+        <div class="card">
+          <span class="icon">📝</span>
+          <strong>Proceso de ventas y validación</strong>
+          <span style="color:#444;">Verificación de identidad y reglas de negocio. Firma del manager para contratos con más de 50 vehículos.</span>
+        </div>
+        <div class="card">
+          <span class="icon">📊</span>
+          <strong>Servicio Plus</strong>
+          <span style="color:#444;">Estadísticas avanzadas de recorrido y operación, gestión de alertas, módulo financiero y gestión de usuarios.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="plus" class="section">
+      <h2 style="color:#145da0;">Servicio Plus: Funcionalidades para el cliente</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="icon">📈</span>
+          <strong>Estadísticas de operación</strong>
+          <span style="color:#444;">Visualización de ubicación, distancia recorrida, tiempo de movimiento por camión (diario, mensual, anual).</span>
+        </div>
+        <div class="card">
+          <span class="icon">⚙️</span>
+          <strong>Administración de alertas</strong>
+          <span style="color:#444;">Elige qué alertas recibir y dónde (correo o dispositivos móviles).</span>
+        </div>
+        <div class="card">
+          <span class="icon">💵</span>
+          <strong>Módulo financiero</strong>
+          <span style="color:#444;">Consulta y paga facturas, gestiona pagos mensuales directamente desde la plataforma.</span>
+        </div>
+        <div class="card">
+          <span class="icon">👤</span>
+          <strong>Gestión de usuarios</strong>
+          <span style="color:#444;">Crea, modifica y asigna roles de acceso: administración, visualización, compras y aprobaciones.</span>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
